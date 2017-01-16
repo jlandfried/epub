@@ -45,4 +45,10 @@ class SpineItem implements ItemInterface
 
         return $this->content;
     }
+
+    public function getContentAsDomDocument() {
+      $document = new \DOMDocument();
+      $document->loadHTML($this->getContent());
+      return $document;
+    }
 }

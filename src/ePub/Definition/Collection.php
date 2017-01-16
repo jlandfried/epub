@@ -53,4 +53,14 @@ abstract class Collection
     {
         return $this->items;
     }
+
+    public function findBy($param, $value) {
+      $return = [];
+      foreach($this->all() as $key => $item) {
+        if (isset($item->{$param}) && $item->{$param} == $value) {
+          $return[] = $item;
+        }
+      }
+      return $return;
+    }
 }
