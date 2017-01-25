@@ -32,7 +32,7 @@ class Navigation
 
       /** @var \ePub\Definition\Chapter; $chapter */
       foreach ($chapters as $chapter) {
-        if (isset($chapter->{$property}) && preg_match('/' . $pattern . '/', $chapter->{$property})) {
+        if (isset($chapter->{$property}) && preg_match('~' . $pattern . '~', $chapter->{$property})) {
           return $chapter;
         }
         else if ($chapter->children) {
